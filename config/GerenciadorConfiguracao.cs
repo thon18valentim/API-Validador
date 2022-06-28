@@ -5,6 +5,7 @@
     public string? UrlBase { get; set; }
     public string? Cliente { get; set; }
     public string? Chave { get; set; }
+    public string? Horario { get; set; }
   }
 
   public static class BuildGerenciadorConfiguracao

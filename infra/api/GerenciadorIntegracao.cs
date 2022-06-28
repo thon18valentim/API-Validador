@@ -37,6 +37,27 @@ namespace ValidadorAPI.infra.api
       }
     }
 
+    public async Task<string> ObterHorarioGerenciador()
+    {
+      try
+      {
+        restClient = new();
+        var request = new RestRequest($"{gerenciadorConfiguracao.UrlBase}{gerenciadorConfiguracao.Horario}")
+        {
+          Method= Method.Get
+        };
+
+        var response = await restClient.GetAsync(request);
+        var retorno = response.Content ?? "";
+
+        return retorno;
+      }
+      catch
+      {
+        throw;
+      }
+    }
+
     public async Task<int> CompararChaves()
     {
       try
